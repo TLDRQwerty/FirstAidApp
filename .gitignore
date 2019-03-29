@@ -14,3 +14,8 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 .vscode
+
+# Intellij Build Files
+*.iml
+*.ipr
+*.iws
