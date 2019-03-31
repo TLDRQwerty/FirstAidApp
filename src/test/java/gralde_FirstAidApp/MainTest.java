@@ -6,9 +6,9 @@ package gralde_FirstAidApp;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class AppTest {
+public class MainTest {
     @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
+        gralde_FirstAidApp.Main classUnderTest = new gralde_FirstAidApp.Main();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
     }
 }
