@@ -14,6 +14,16 @@ public class Lesson {
         this.title = title;
         this.content = content;
     }
+
+    public Lesson(String title, ArrayList<String> description, ArrayList<String> images) {
+        if (description.size() != images.size()) throw new Error("The length of both images and description must be of the same size");
+        this.title = title;
+        this.content = new ArrayList();
+        for (int i = 0; i < description.size(); i++) {
+            content.add(new DescriptionImage(description.get(i), images.get(i)));
+        }
+    }
+
     public ArrayList<DescriptionImage> getContent() {
         return content;
     }
