@@ -15,12 +15,12 @@ public class Lesson {
         this.content = content;
     }
 
-    public Lesson(String title, ArrayList<String> description, ArrayList<String> images) {
-        if (description.size() != images.size()) throw new Error("The length of both images and description must be of the same size");
+    public Lesson(String title, ArrayList<String> description, ArrayList<String> images, ArrayList<String> imageCaption) {
+        if (description.size() != images.size() && images.size() != imageCaption.size()) throw new Error("The length of both images and description must be of the same size");
         this.title = title;
         this.content = new ArrayList();
         for (int i = 0; i < description.size(); i++) {
-            content.add(new DescriptionImage(description.get(i), images.get(i)));
+            content.add(new DescriptionImage(description.get(i), images.get(i), imageCaption.get(i)));
         }
     }
 
@@ -46,5 +46,9 @@ public class Lesson {
 
     public File getImage(int index) {
         return this.content.get(index).getImage();
+    }
+
+    public String getImageCaption(int i) {
+        return this.content.get(i).getImageCaption();
     }
 }
